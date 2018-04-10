@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2>Signup</h2>
+
+    <form action="/welcome" method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <te>
+                        <label for="username">Username</label>
+                    </te>
+                    <te>
+                        <input name="username"type="text"/><br>
+                    </te>
+                    <te>
+                        {% if username_error %}
+                            <p class="error">{{username_error}}</p>
+                        {% endif %}
+                    </te>
+                </tr>
+                <tr>
+                    <te>
+                        <label for="password">Password</label>
+                    </te>
+                    <te>
+                        <input name="password"type="password"/><br>
+                    </te>
+                    <te>
+                        {% if password_error %}
+                            <p class="error">{{password_error}}</p>
+                        {% endif %}
+                    </te>
+                </tr>
+                <tr>
+                    <te>
+                        <label for="confirmpassword">Confirm Password</label>
+                    </te>
+                    <te>
+                        <input name="confirmpassword"type="password"/><br>
+                    </te>
+                    <te>
+                        {% if confirmpassword_error %}
+                            <p class="error">{{confirmpassword_error}}</p>
+                        {% endif %}
+                    </te>
+                </tr>
+                <tr>
+                    <te>
+                        <label for="email">Email (Optional)</label>
+                    </te>
+                    <te>
+                        <input name="email"type="text"/><br>
+                    </te>
+                    <te>
+                        {% if email_error %}
+                            <p class="error">{{email_error}}</p>
+                        {% endif %}
+                    </te>
+                </tr>
+            </tbody>
+        </table>
+        <input type="submit" value="Submit"/>
+    </form>
+    
+{% endblock %}
