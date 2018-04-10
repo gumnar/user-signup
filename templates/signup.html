@@ -12,52 +12,48 @@
                         <label for="username">Username</label>
                     </te>
                     <te>
-                        <input name="username"type="text"/><br>
-                    </te>
-                    <te>
+                        <input name="username"type="text"/>
+                    
                         {% if username_error %}
                             <p class="error">{{username_error}}</p>
                         {% endif %}
-                    </te>
+                    </te><br>
                 </tr>
                 <tr>
                     <te>
                         <label for="password">Password</label>
                     </te>
                     <te>
-                        <input name="password"type="password"/><br>
-                    </te>
-                    <te>
+                        <input name="password"type="password"/>
+                   
                         {% if password_error %}
                             <p class="error">{{password_error}}</p>
                         {% endif %}
-                    </te>
+                    </te><br>
                 </tr>
                 <tr>
                     <te>
                         <label for="confirmpassword">Confirm Password</label>
                     </te>
                     <te>
-                        <input name="confirmpassword"type="password"/><br>
-                    </te>
-                    <te>
+                        <input name="confirmpassword"type="password"/>
+                    
                         {% if confirmpassword_error %}
                             <p class="error">{{confirmpassword_error}}</p>
                         {% endif %}
-                    </te>
+                    </te><br>
                 </tr>
                 <tr>
                     <te>
                         <label for="email">Email (Optional)</label>
                     </te>
                     <te>
-                        <input name="email"type="text"/><br>
-                    </te>
-                    <te>
+                        <input name="email"type="text"/>
+                    
                         {% if email_error %}
                             <p class="error">{{email_error}}</p>
                         {% endif %}
-                    </te>
+                    </te><br>
                 </tr>
             </tbody>
         </table>

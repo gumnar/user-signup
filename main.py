@@ -67,10 +67,10 @@ def welcome_message():
     username = request.form['username']
 
     #Init error reporting variables
-    email_error = ''
-    confirmpassword_error = ''
+    username_error = ''
     password_error = ''
     confirmpassword_error = ''
+    email_error = ''
 
     if check_username() is False:
         username_error = "Invalid username"
@@ -81,13 +81,15 @@ def welcome_message():
     if check_confirmpassword() is False:
         confirmpassword_error = "Passwords do not match"
 
-    return render_template("signup.html",
+    if check_username() and check_password() and check_confirmpassword() and check_email():
+        return render_template("welcome.html", username = username)
+
+    return redirect("/signup",
                             username_error = username_error,
                             password_error = password_error, 
                             email_error = email_error,
                             confirmpassword_error = confirmpassword_error)
 
-    return render_template("welcome.html", username = username)
 
 #Route to the signup page until further notice
 @app.route("/")
