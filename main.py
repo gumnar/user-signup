@@ -60,16 +60,17 @@ def check_confirmpassword():
 @app.route("/signup")
 def sign_up():
     encoded_error = request.args.get('error')
-    return render_template("signup.html",
-                            error = encoded_error and cgi.escape(encoded_error, quote=True),
-                            username_error = username_error,
-                            password_error = password_error, 
-                            email_error = email_error,
-                            confirmpassword_error = confirmpassword_error)
+    return render_template("signup.html")
 
 @app.route("/welcome", methods=['POST'])
 def welcome_message():
     username = request.form['username']
+
+    #Init error reporting variables
+    email_error = ''
+    confirmpassword_error = ''
+    password_error = ''
+    confirmpassword_error = ''
 
     if check_username() is False:
         username_error = "Invalid username"
@@ -79,6 +80,12 @@ def welcome_message():
         email_error = "Invalid email address"
     if check_confirmpassword() is False:
         confirmpassword_error = "Passwords do not match"
+
+    return render_template("signup.html",
+                            username_error = username_error,
+                            password_error = password_error, 
+                            email_error = email_error,
+                            confirmpassword_error = confirmpassword_error)
 
     return render_template("welcome.html", username = username)
 
