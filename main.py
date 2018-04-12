@@ -13,7 +13,8 @@ def check_username():
     #Check for spaces in password
     for char in username:
         if char == ' ':
-            return True
+            return False
+    return True
 
 def check_password():
     password = request.form['password']
@@ -48,6 +49,8 @@ def check_email():
             at_bool = True
     if period_bool == True and at_bool == True:
         return True
+    #If no period or no @ then return False
+    return False
 
 def check_confirmpassword():
     password = request.form['password']
