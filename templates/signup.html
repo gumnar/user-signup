@@ -8,50 +8,50 @@
         <table>
             <tbody>
                 <tr>
-                    <te>
+                    <tel>
                         <label for="username">Username</label>
-                    </te>
+                    </tel>
                     <te>
                         <input name="username"type="text"/>
                     
                         {% if username_error %}
-                            <p class="error">{{username_error}}</p>
+                            <label for="username" class="error">{{username_error}}</label>
                         {% endif %}
                     </te><br>
                 </tr>
                 <tr>
-                    <te>
+                    <tel>
                         <label for="password">Password</label>
-                    </te>
+                    </tel>
                     <te>
                         <input name="password"type="password"/>
                    
                         {% if password_error %}
-                            <p class="error">{{password_error}}</p>
+                            <label for="password" class="error">{{password_error}}</label>
                         {% endif %}
                     </te><br>
                 </tr>
                 <tr>
-                    <te>
+                    <tel>
                         <label for="confirmpassword">Confirm Password</label>
-                    </te>
+                    </tel>
                     <te>
                         <input name="confirmpassword"type="password"/>
                     
                         {% if confirmpassword_error %}
-                            <p class="error">{{confirmpassword_error}}</p>
+                            <label for="confirmpassword" class="error">{{confirmpassword_error}}</label>
                         {% endif %}
                     </te><br>
                 </tr>
                 <tr>
-                    <te>
+                    <tel>
                         <label for="email">Email (Optional)</label>
-                    </te>
+                    </tel>
                     <te>
                         <input name="email"type="text"/>
                     
                         {% if email_error %}
-                            <p class="error">{{email_error}}</p>
+                            <label for="email" class="error">{{email_error}}</label>
                         {% endif %}
                     </te><br>
                 </tr>
