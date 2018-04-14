@@ -84,10 +84,11 @@ def welcome_message():
     if check_confirmpassword() is False:
         confirmpassword_error = "Passwords do not match"
 
+    #If successful
     if check_username() and check_password() and check_confirmpassword() and check_email():
         return render_template("welcome.html", username = username)
 
-    return redirect("/signup",
+    return render_template("signup.html",
                             username_error = username_error,
                             password_error = password_error, 
                             email_error = email_error,
